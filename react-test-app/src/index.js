@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Like from "./components/like";
+import Checkbox from "./components/checkbox";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+    <Checkbox labelActive="Active" labelInactive="Inactive" />
+    <Like/>
+  </>,
   document.getElementById('root')
 );
 
