@@ -21,9 +21,32 @@ afterEach(() => {
   container = null;
 });
 
-describe("Testing Checkbox component", () => {
+describe("Testing Likes component", () => {
   it("Defaults to 0 likes value", () => {
     const paragraph = container.querySelector("p");
     expect(paragraph.textContent).toBe("Likes: 0");
+  });
+});
+
+
+describe("Testing Like's +1 button", () => {
+  it("Likes status and label changes when clicked", () => {
+    const btn = document.getElementById("increment");
+    const paragraph = container.querySelector("p");
+    act(() => {
+      btn.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    });
+    expect(paragraph.textContent).toBe("Likes: 1");
+  });
+});
+
+describe("Testing Like's -1 button", () => {
+  it("Likes status and label changes when clicked", () => {
+    const btn = document.getElementById("decrement");
+    const paragraph = container.querySelector("p");
+    act(() => {
+      btn.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    });
+    expect(paragraph.textContent).toBe("Likes: -1");
   });
 });
